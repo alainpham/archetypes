@@ -13,6 +13,8 @@ To use it do
 Once you project created you can run it with
 	mvn camel:run
 
-You can create a standalone runnable all in one zip package with the runnable profile
+You can create a standalone runnable all in one zip package with the runnable profile. It uses hawtapp maven plugin to achieve this.
 
 	mvn package -Prunnable
+
+Find your .zip package or hawtapp folder and run the run.sh script to launch your project.

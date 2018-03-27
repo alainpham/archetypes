@@ -1,4 +1,4 @@
-# Bunch of useful archetypes mainly Red Hat Fuse and other Java Projects
+# Bunch of useful archetypes mainly for Red Hat Fuse and other Java Projects
 
 ## camel-archetype-spring-bom
 

@@ -1,0 +1,18 @@
+# Red Hat JBoss Fuse 6.3.0 Camel Spring DSL Archetype
+
+This is a Red Hat JBoss Fuse 6.3.0 Camel Spring DSL Archetype that uses the parent BOM to handle dependency versions.
+
+To install the archetype run
+
+	mvn install
+
+To use it do
+
+	mvn archetype:generate -DarchetypeGroupId=org.apache.camel -DarchetypeArtifactId=camel-archetype-spring-bom -DarchetypeVersion=6.3.0
+
+Once you project created you can run it with
+	mvn camel:run
+
+You can create a standalone runnable all in one zip package with the runnable profile
+
+	mvn package -Prunnable

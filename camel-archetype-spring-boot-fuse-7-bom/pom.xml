@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
  
   <groupId>org.apache.camel</groupId>
-  <artifactId>camel-archetype-spring-bom</artifactId>
+  <artifactId>camel-archetype-spring-boot-fuse-7-bom</artifactId>
   <version>7.0.0</version>
   <packaging>jar</packaging>
 </project>

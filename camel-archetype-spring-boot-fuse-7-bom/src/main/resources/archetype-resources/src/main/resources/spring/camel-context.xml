@@ -8,14 +8,14 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        ">
 
-  <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
-   <route id="${artifactId}-sample-route">
-     <from id="${artifactId}-sample-route-starter" uri="timer:start"/>
-      <transform id="route-transform">
-        <method ref="myTransformer"/>
-      </transform>
-      <log id="log-body" message=">>> ${body}"/>
-    </route>
-  </camelContext>
+    <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
+        <route id="${artifactId}-sample-route">
+            <from id="${artifactId}-sample-route-starter" uri="timer:start"/>
+            <transform id="route-transform">
+                <method ref="myTransformer"/>
+            </transform>
+            <log id="log-body" message=">>> ${body}"/>
+        </route>
+    </camelContext>
 
 </beans>

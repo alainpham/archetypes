@@ -6,3 +6,5 @@
 **/*.log
 **/.vscode
 **/log-camel-lsp.out
+**/*.iml
+**/.idea

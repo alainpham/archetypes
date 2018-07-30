@@ -6,10 +6,10 @@ spec:
           resources:
             requests:
               cpu: "0.2"
-#              memory: 2000Mi
+              memory: 512Mi
             limits:
               cpu: "1.0"
-#              memory: 2000Mi
+              memory: 512Mi
           env:
           - name: SPRING_APPLICATION_JSON
             value: '{"server":{"tomcat":{"max-threads":4}}}'

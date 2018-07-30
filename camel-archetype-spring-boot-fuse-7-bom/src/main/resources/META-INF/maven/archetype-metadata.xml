@@ -17,6 +17,18 @@
         <include>**/*</include>
       </includes>
     </fileSet>
+     <fileSet filtered="true" encoding="UTF-8">
+         <directory>src/main/fabric8</directory>
+         <includes>
+             <include>**/*</include>
+         </includes>
+     </fileSet>
+     <fileSet filtered="true" encoding="UTF-8">
+         <directory>src/main/fabric8-includes</directory>
+         <includes>
+             <include>**/*</include>
+         </includes>
+     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/data</directory>
       <includes>

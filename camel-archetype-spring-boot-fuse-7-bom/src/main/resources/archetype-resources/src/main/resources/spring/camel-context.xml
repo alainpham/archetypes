@@ -9,6 +9,17 @@
        ">
 
     <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
+
+        <route id="http-receiver">
+            <from id="http-receiver-starter" uri="servlet://ping" />
+            <setHeader headerName="Content-Type">
+                <constant>application/json</constant>
+            </setHeader>
+            <setBody>
+                <constant>{"msg" : "HELLO"}</constant>
+            </setBody>
+        </route>
+
         <route id="${artifactId}-sample-route">
             <from id="${artifactId}-sample-route-starter" uri="timer:start"/>
             <transform id="route-transform">

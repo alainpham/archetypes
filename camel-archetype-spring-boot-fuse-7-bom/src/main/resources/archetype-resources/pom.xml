@@ -95,6 +95,18 @@
             <artifactId>camel-cxf-starter</artifactId>
         </dependency>
 
+        <!--Circuit breaker-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-hystrix-starter</artifactId>
+        </dependency>
+
+        <!--For database access -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-sql-starter</artifactId>
+        </dependency>
+
     </dependencies>
 
 
@@ -120,6 +132,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <profiles>
+                        <profile>dev</profile>
+                    </profiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>

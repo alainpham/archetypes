@@ -222,6 +222,7 @@
                                         <wsdlOption>
                                             <wsdl>${basedir}/src/main/resources/wsdl/contract.wsdl</wsdl>
                                             <wsdlLocation>classpath:wsdl/contract.wsdl</wsdlLocation>
+                                            <bareMethods></bareMethods>
                                         </wsdlOption>
                                     </wsdlOptions>
                                 </configuration>

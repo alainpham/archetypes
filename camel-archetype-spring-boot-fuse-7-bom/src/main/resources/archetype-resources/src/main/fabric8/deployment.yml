@@ -12,7 +12,5 @@ spec:
               cpu: "1.0"
               memory: 512Mi
           env:
-          - name: SPRING_APPLICATION_JSON
-            value: '{"server":{"tomcat":{"max-threads":4}}}'
           - name: AB_JMX_EXPORTER_CONFIG
             value: "prometheus.yml"

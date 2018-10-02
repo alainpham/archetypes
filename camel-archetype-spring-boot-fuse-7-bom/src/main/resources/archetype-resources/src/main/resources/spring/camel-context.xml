@@ -12,6 +12,16 @@
 
     <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
 
+		<rest path="/restsvc">
+			<get uri="/ping">
+				<route>
+					<setBody>
+						<method ref="myTransformer" />
+					</setBody>
+				</route>
+			</get>
+		</rest>
+
         <route id="http-receiver">
             <from id="http-receiver-starter" uri="servlet://ping" />
             <setHeader headerName="Content-Type">

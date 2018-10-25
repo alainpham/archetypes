@@ -22,3 +22,7 @@ Acces Swagger UI with definition
     http://localhost:8090/webjars/swagger-ui/2.1.0/index.html?url=/camel/api-docs
 
     curl http://localhost:8090/camel/restsvc/ping
+
+To deploy on Openshift, make sure you are connected to your Openshift instance and project with the oc command.
+
+    mvn -P ocp fabric8:deploy

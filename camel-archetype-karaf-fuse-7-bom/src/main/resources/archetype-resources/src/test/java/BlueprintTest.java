@@ -16,7 +16,7 @@ import org.junit.Test;
 /**
  * A unit test to verify the Camel route works as designed.
  */
-public class BlueprintCBRTest extends CamelBlueprintTestSupport {
+public class BlueprintTest extends CamelBlueprintTestSupport {
 
 	// Expected message bodies
 	protected String expectedBodies = "hello"; // empty to start

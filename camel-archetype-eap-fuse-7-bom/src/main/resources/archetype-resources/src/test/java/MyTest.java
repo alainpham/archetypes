@@ -1,4 +1,4 @@
-package techlab.testspring;
+package ${package};
 
 import java.io.File;
 

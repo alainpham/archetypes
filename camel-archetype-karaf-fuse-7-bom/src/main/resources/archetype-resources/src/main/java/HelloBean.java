@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * A bean which we use in the route
  */
-public class HelloBean implements Hello {
+public class HelloBean {
 
     private String say = "Hello World";
 

@@ -8,10 +8,10 @@ To install the archetype run
 
 To use it do
 
-	mvn archetype:generate -DarchetypeGroupId=org.apache.camel -DarchetypeArtifactId=camel-archetype-spring-boot-fuse-7-bom -DarchetypeVersion=7.1.0
+	mvn archetype:generate -DarchetypeGroupId=org.apache.camel -DarchetypeArtifactId=camel-archetype-eap-fuse-7-bom -DarchetypeVersion=7.1.0
 
 ## Running the project
 
-Once you project created you can run it with
+Once you project created you can run it with (need a local EAP instance running)
 
-	mvn mvn clean package wildfly:run
+	mvn clean package wildfly:run

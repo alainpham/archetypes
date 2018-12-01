@@ -10,6 +10,7 @@
     <description>${artifactId}</description>
     <properties>
         <fuse.version>7.1.0.fuse-710019-redhat-00002</fuse.version>
+		<version.org.apache.camel>2.21.0.fuse-710018-redhat-00001</version.org.apache.camel>
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <swagger.ui.version>2.1.0</swagger.ui.version>
@@ -195,6 +196,23 @@
             <build>
                 <plugins>
                     <plugin>
+						<groupId>org.apache.camel</groupId>
+						<artifactId>camel-restdsl-swagger-plugin</artifactId>
+						<version>${version.org.apache.camel}</version>
+						<executions>
+							<execution>
+								<id>generate-sources</id>
+								<goals>
+									<goal>generate-xml</goal>
+								</goals>
+								<configuration>
+									<specificationUri>src/main/resources/api-definitions/basic-api.yaml</specificationUri>
+									<outputDirectory>src/main/resources/camel-rest</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+                    <plugin>
                         <groupId>io.swagger</groupId>
                         <artifactId>swagger-codegen-maven-plugin</artifactId>
                         <version>${swagger.codegen.version}</version>
@@ -205,8 +223,9 @@
                                     <goal>generate</goal>
                                 </goals>
                                 <configuration>
-                                    <inputSpec>src/main/resources/swaggerdef/swagger.json</inputSpec>
+                                    <inputSpec>src/main/resources/api-definitions/basic-api.yaml</inputSpec>
                                     <language>jaxrs-cxf</language>
+           							<generateApis>false</generateApis>
                                     <generateSupportingFiles>false</generateSupportingFiles>
                                     <modelPackage>restsvc.model</modelPackage>
                                     <apiPackage>restsvc.api</apiPackage>

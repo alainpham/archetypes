@@ -97,7 +97,7 @@ rules:
 
 
 # Route level
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExchangesCompleted'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExchangesCompleted'
     name: org.apache.camel.ExchangesCompleted
     help: Exchanges Completed
     type: COUNTER
@@ -105,7 +105,7 @@ rules:
       context: $1
       route: $2
       type: routes
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExchangesFailed'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExchangesFailed'
     name: org.apache.camel.ExchangesFailed
     help: Exchanges Failed
     type: COUNTER
@@ -113,7 +113,7 @@ rules:
       context: $1
       route: $2
       type: routes
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExchangesInflight'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExchangesInflight'
     name: org.apache.camel.ExchangesInflight
     help: Exchanges Inflight
     type: COUNTER
@@ -121,7 +121,7 @@ rules:
       context: $1
       route: $2
       type: routes
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExchangesTotal'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExchangesTotal'
     name: org.apache.camel.ExchangesTotal
     help: Exchanges Total
     type: COUNTER
@@ -129,7 +129,7 @@ rules:
       context: $1
       route: $2
       type: routes
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExchangesTotal'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExchangesTotal'
     name: org.apache.camel.ExchangesTotal
     help: Exchanges Total
     type: COUNTER
@@ -137,7 +137,7 @@ rules:
       context: $1
       route: $2
       type: routes
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>FailuresHandled'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>FailuresHandled'
     name: org.apache.camel.FailuresHandled
     help: Failures Handled
     labels:
@@ -145,7 +145,7 @@ rules:
         route: $2
         type: routes
     type: COUNTER
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>ExternalRedeliveries'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>ExternalRedeliveries'
     name: org.apache.camel.ExternalRedeliveries
     help: External Redeliveries
     labels:
@@ -153,7 +153,7 @@ rules:
         route: $2
         type: routes
     type: COUNTER
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>MaxProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>MaxProcessingTime'
     name: org.apache.camel.MaxProcessingTime
     help: Maximum Processing Time
     labels:
@@ -161,7 +161,7 @@ rules:
         route: $2
         type: routes
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>MeanProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>MeanProcessingTime'
     name: org.apache.camel.MeanProcessingTime
     help: Mean Processing Time
     labels:
@@ -169,7 +169,7 @@ rules:
         route: $2
         type: routes
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>MinProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>MinProcessingTime'
     name: org.apache.camel.MinProcessingTime
     help: Minimum Processing Time
     labels:
@@ -177,7 +177,7 @@ rules:
         route: $2
         type: routes
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>Redeliveries'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>Redeliveries'
     name: org.apache.camel.Redeliveries
     help: Redeliveries
     labels:
@@ -185,7 +185,7 @@ rules:
         route: $2
         type: routes
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>TotalProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>TotalProcessingTime'
     name: org.apache.camel.TotalProcessingTime
     help: Total Processing Time
     labels:
@@ -193,7 +193,7 @@ rules:
         route: $2
         type: routes
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=routes, name=([^,]+)><>InflightExchanges'
+  - pattern: 'org.apache.camel<context=(.*), type=routes, name=\"(.*)\"><>InflightExchanges'
     name: org.apache.camel.InflightExchanges
     help: Inflight Exchanges
     labels:
@@ -203,7 +203,7 @@ rules:
     type: GAUGE
 
 # Processor level
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExchangesCompleted'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExchangesCompleted'
     name: org.apache.camel.ExchangesCompleted
     help: Exchanges Completed
     type: COUNTER
@@ -211,7 +211,7 @@ rules:
       context: $1
       processor: $2
       type: processors
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExchangesFailed'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExchangesFailed'
     name: org.apache.camel.ExchangesFailed
     help: Exchanges Failed
     type: COUNTER
@@ -219,7 +219,7 @@ rules:
       context: $1
       processor: $2
       type: processors
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExchangesInflight'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExchangesInflight'
     name: org.apache.camel.ExchangesInflight
     help: Exchanges Inflight
     type: COUNTER
@@ -227,7 +227,7 @@ rules:
       context: $1
       processor: $2
       type: processors
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExchangesTotal'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExchangesTotal'
     name: org.apache.camel.ExchangesTotal
     help: Exchanges Total
     type: COUNTER
@@ -235,7 +235,7 @@ rules:
       context: $1
       processor: $2
       type: processors
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExchangesTotal'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExchangesTotal'
     name: org.apache.camel.ExchangesTotal
     help: Exchanges Total
     type: COUNTER
@@ -243,7 +243,7 @@ rules:
       context: $1
       processor: $2
       type: processors
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>FailuresHandled'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>FailuresHandled'
     name: org.apache.camel.FailuresHandled
     help: Failures Handled
     labels:
@@ -251,7 +251,7 @@ rules:
         processor: $2
         type: processors
     type: COUNTER
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>ExternalRedeliveries'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>ExternalRedeliveries'
     name: org.apache.camel.ExternalRedeliveries
     help: External Redeliveries
     labels:
@@ -259,7 +259,7 @@ rules:
         processor: $2
         type: processors
     type: COUNTER
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>MaxProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>MaxProcessingTime'
     name: org.apache.camel.MaxProcessingTime
     help: Maximum Processing Time
     labels:
@@ -267,7 +267,7 @@ rules:
         processor: $2
         type: processors
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>MeanProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>MeanProcessingTime'
     name: org.apache.camel.MeanProcessingTime
     help: Mean Processing Time
     labels:
@@ -275,7 +275,7 @@ rules:
         processor: $2
         type: processors
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>MinProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>MinProcessingTime'
     name: org.apache.camel.MinProcessingTime
     help: Minimum Processing Time
     labels:
@@ -283,7 +283,7 @@ rules:
         processor: $2
         type: processors
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>Redeliveries'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>Redeliveries'
     name: org.apache.camel.Redeliveries
     help: Redeliveries
     labels:
@@ -291,7 +291,7 @@ rules:
         processor: $2
         type: processors
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>TotalProcessingTime'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>TotalProcessingTime'
     name: org.apache.camel.TotalProcessingTime
     help: Total Processing Time
     labels:
@@ -299,7 +299,7 @@ rules:
         processor: $2
         type: processors
     type: GAUGE
-  - pattern: 'org.apache.camel<context=([^,]+), type=processors, name=([^,]+)><>InflightExchanges'
+  - pattern: 'org.apache.camel<context=(.*), type=processors, name=\"(.*)\"><>InflightExchanges'
     name: org.apache.camel.InflightExchanges
     help: Inflight Exchanges
     labels:

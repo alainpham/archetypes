@@ -38,7 +38,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>ReadMe.txt</include>
+        <include>ReadMe.md</include>
       </includes>
     </fileSet>
   </fileSets>

@@ -1,0 +1,2 @@
+Camel Library ${artifactId}
+===========================

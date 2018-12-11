@@ -3,13 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>microbam</groupId>
-	<artifactId>microbam-parent</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
+	<groupId>org.apache.camel</groupId>
+	<artifactId>archetypes</artifactId>
+	<version>7.1</version>
 	<packaging>pom</packaging>
     <modules>
 		<module>camel-archetype-eap-fuse-7-bom</module>
 		<module>camel-archetype-karaf-fuse-7-bom</module>
         <module>camel-archetype-spring-boot-fuse-7-bom</module>
+        <module>camel-archetype-library-bom</module>
 	</modules>
 </project>

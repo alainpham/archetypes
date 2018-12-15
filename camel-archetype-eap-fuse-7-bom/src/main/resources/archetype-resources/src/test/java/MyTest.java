@@ -29,7 +29,7 @@ public class MyTest {
     @Test
     public void testMyRoute() throws NamingException {
         InitialContext context = new InitialContext();
-        CamelContext camelContext = (CamelContext) context.lookup("java:jboss/camel/context/spring-context");
+        CamelContext camelContext = (CamelContext) context.lookup("java:jboss/camel/context/${artifactId}");
         Assert.assertNotNull("Expecting camelContext to not be null", camelContext);
 
         ProducerTemplate producerTemplate = camelContext.createProducerTemplate();

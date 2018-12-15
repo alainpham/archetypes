@@ -31,6 +31,14 @@
 			</get>
 		</rest>
 
+		<route id="basicRoute">
+			<from id="basicRouteStarter" uri="direct:start" />
+			<transform>
+				<simple>Hello ${body}</simple>
+			</transform>
+			<log message="${body}"></log>
+		</route>
+
 		<route id="timerRoute">
 			<from id="timerRouteStarter" uri="timer:test" />
 			<log id="logHelloWorld" message="hello world from ${artifactId}" />

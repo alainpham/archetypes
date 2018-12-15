@@ -11,10 +11,29 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 	
+	<bean id="servlet" class="org.apache.camel.component.servlet.ServletComponent">
+			<property name="servletName" value="CamelServlet-${artifactId}"/>
+	</bean>
+
 	<camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
-		<route id="_route2">
-			<from id="_from2" uri="timer:test" />
-			<log id="_log1" message="hello world" />
+
+		<packageScan>
+			<package>${package}</package>
+		</packageScan>
+
+		<rest id="restsvc" path="/restsvc" bindingMode="off" produces="application/json">
+			<get id="getPing" uri="/ping">
+				<route id="getPingRoute">
+					<setBody>
+						<constant>{"msg" : "ok"}</constant>
+					</setBody>
+				</route>
+			</get>
+		</rest>
+
+		<route id="timerRoute">
+			<from id="timerRouteStarter" uri="timer:test" />
+			<log id="logHelloWorld" message="hello world from ${artifactId}" />
 		</route>
 
 		<route id="http-receiver">

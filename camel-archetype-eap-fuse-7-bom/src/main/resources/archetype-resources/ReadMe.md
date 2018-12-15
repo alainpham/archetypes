@@ -7,6 +7,18 @@ This project is setup to allow you to create a Apache Camel Spring application, 
 server running Red Hat Fuse on EAP. An example Spring XML Camel Route has been created for you, together with an Arquillian
 integration test.
 
+
+mvn clean package wildfly:deploy
+
+Acces to swagger def
+
+http://localhost:8080/${artifactId}/webjars/swagger-ui/2.1.0/index.html?url=/${artifactId}/camel/api-docs
+
+For testing
+
+    curl http://localhost:8080/${artifactId}/camel/api-docs
+    curl http://localhost:8080/${artifactId}/camel/ping
+
 Prerequisites
 =============
 

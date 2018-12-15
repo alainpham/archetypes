@@ -5,14 +5,14 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 	<!-- Camel servlet used in the Camel application -->
 	<servlet>
-		<servlet-name>CamelServlet</servlet-name>
+		<servlet-name>CamelServlet-${artifactId}</servlet-name>
 		<servlet-class>org.apache.camel.component.servlet.CamelHttpTransportServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<!-- Camel servlet mapping -->
 	<servlet-mapping>
-		<servlet-name>CamelServlet</servlet-name>
+		<servlet-name>CamelServlet-${artifactId}</servlet-name>
 		<url-pattern>/camel/*</url-pattern>
 	</servlet-mapping>
 </web-app>

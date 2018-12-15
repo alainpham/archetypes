@@ -22,7 +22,7 @@ public class RestConfigurator extends RouteBuilder {
 		
 		restConfiguration()
 		.component("servlet")
-		.bindingMode(RestBindingMode.json)
+		.bindingMode(RestBindingMode.auto)
 		.contextPath("/${artifactId}/camel")
 		.port(getContext().resolvePropertyPlaceholders("{{sys:camelrest.port:8080}}"))
 		.apiContextPath("/api-docs")

@@ -9,8 +9,8 @@
     <name>${artifactId}</name>
     <description>${artifactId}</description>
     <properties>
-        <fuse.version>7.1.0.fuse-710019-redhat-00002</fuse.version>
-		<version.org.apache.camel>2.21.0.fuse-710018-redhat-00001</version.org.apache.camel>
+        <fuse.version>7.2.0.fuse-720020-redhat-00001</fuse.version>
+		<version.org.apache.camel>2.21.0.fuse-720050-redhat-00001</version.org.apache.camel>
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

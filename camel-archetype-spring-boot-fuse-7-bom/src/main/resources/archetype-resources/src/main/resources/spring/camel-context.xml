@@ -12,8 +12,8 @@
 
     <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
 
-		<rest id="restsvc" id="get-ping" path="/restsvc">
-			<get uri="/ping">
+		<rest id="restsvc"  path="/restsvc">
+			<get id="get-ping" uri="/ping">
 				<route id="get-pring-route">
 					<setBody>
 						<method ref="myTransformer" />

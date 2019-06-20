@@ -1,28 +1,41 @@
-Camel Spring Boot Project ${artifactId}
-===========================
+#[[# Spring Boot with camel and other useful things]]# ${artifactId} 
 
-To build this project use
+#[[## To build this project use]]#
 
-    mvn install
+```
+mvn install
+```
 
-To run this project with Maven use
+#[[## To run this project with Maven use]]#
 
-    mvn spring-boot:run
-
-For more help see the Apache Camel documentation
-
-    http://camel.apache.org/
+```
+mvn spring-boot:run
+```
 
 
-For testing
-    curl http://localhost:8090/camel/api-docs
-    curl http://localhost:8090/camel/ping
+#[[## For testing]]#
 
-Acces Swagger UI with definition
-    http://localhost:8090/webjars/swagger-ui/2.1.0/index.html?url=/camel/api-docs
+```
+curl http://localhost:8090/camel/api-docs
+curl http://localhost:8090/camel/ping
+```
 
-    curl http://localhost:8090/camel/restsvc/ping
 
-To deploy on Openshift, make sure you are connected to your Openshift instance and project with the oc command.
+#[[## Acces Swagger UI with definition]]#
 
-    mvn -P ocp fabric8:deploy
+```
+http://localhost:8090/webjars/swagger-ui/3.22.2/index.html?url=/camel/api-docs
+```
+
+#[[## Call the ping rest operation]]#
+```
+curl http://localhost:8090/camel/restsvc/ping
+```
+
+#[[## Run local container with specific network and IP address]]#
+
+
+```
+docker build -t ${artifactId} .
+docker run -d --net primenet --ip 172.18.0.10 --name ${artifactId} ${artifactId}
+```

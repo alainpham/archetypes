@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.camel</groupId>
 	<artifactId>archetypes</artifactId>
-	<version>7.3</version>
+	<version>7</version>
 	<packaging>pom</packaging>
     <modules>
 		<module>camel-archetype-eap-fuse-7-bom</module>

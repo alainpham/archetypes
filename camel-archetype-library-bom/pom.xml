@@ -4,6 +4,6 @@
  
   <groupId>org.apache.camel</groupId>
   <artifactId>camel-archetype-library-bom</artifactId>
-  <version>7.3.0</version>
+  <version>7</version>
   <packaging>jar</packaging>
 </project>

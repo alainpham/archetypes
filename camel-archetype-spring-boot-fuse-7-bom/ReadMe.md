@@ -8,7 +8,7 @@ To install the archetype run
 
 To use it do
 
-	mvn archetype:generate -DarchetypeGroupId=org.apache.camel -DarchetypeArtifactId=camel-archetype-spring-boot-fuse-7-bom -DarchetypeVersion=7.1.0
+	mvn archetype:generate -DarchetypeGroupId=org.apache.camel -DarchetypeArtifactId=camel-archetype-spring-boot-fuse-7-bom -DarchetypeVersion=7
 
 ## Running the project
 

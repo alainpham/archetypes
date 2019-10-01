@@ -10,7 +10,7 @@
        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
        ">
 
-    <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
+    <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring" useMDCLogging="true">
 
 		<rest id="restsvc"  path="/restsvc">
 			<get id="get-ping" uri="/ping">
@@ -24,12 +24,14 @@
 
         <route id="http-receiver">
             <from id="http-receiver-starter" uri="servlet://ping" />
+            <to uri="bean:eventLogger?method=logStartAndBody" />
             <setHeader headerName="Content-Type">
                 <constant>application/json</constant>
             </setHeader>
             <setBody>
                 <constant>{"msg" : "HELLO"}</constant>
             </setBody>
+            <to uri="bean:eventLogger?method=logElapsedTimeAndBody" />
         </route>
 
         <route id="${artifactId}-sample-route">

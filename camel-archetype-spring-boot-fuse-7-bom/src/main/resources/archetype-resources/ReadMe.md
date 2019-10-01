@@ -24,7 +24,7 @@ curl http://localhost:8090/camel/ping
 #[[## Acces Swagger UI with definition]]#
 
 ```
-http://localhost:8090/webjars/swagger-ui/3.22.2/index.html?url=/camel/api-docs
+http://localhost:8090/webjars/swagger-ui/3.23.5/index.html?url=/camel/api-docs
 ```
 
 #[[## Call the ping rest operation]]#

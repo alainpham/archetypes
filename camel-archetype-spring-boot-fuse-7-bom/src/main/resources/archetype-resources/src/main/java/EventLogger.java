@@ -3,6 +3,7 @@ package ${package};
 import org.apache.camel.Body;
 import org.apache.camel.Exchange;
 import org.apache.camel.ExchangeProperty;
+import org.apache.camel.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -18,7 +19,7 @@ public class EventLogger {
 
     private static final Logger logger = LoggerFactory.getLogger(EventLogger.class);
 
-    public void logStartAndBody(@ExchangeProperty(value = Exchange.CREATED_TIMESTAMP) Date startDate, @Body Object body) {
+    public void logStartAndBody(@ExchangeProperty(value = Exchange.CREATED_TIMESTAMP) Date startDate, @Body Object body, @Header(value=Exchange.BREADCRUMB_ID) String breadcrumbId) {
         
         Date logDate = new Date();
         logger.info("Route has started",
@@ -26,11 +27,12 @@ public class EventLogger {
         kv("startDate",startDate),
         kv("logDate",logDate),
         kv("elapsed", logDate.getTime() - startDate.getTime()),
-        kv("body",body)
+        kv("body",body),
+        kv("camel.breadcrumbId",breadcrumbId)
         );
     }
 
-    public void logElapsedTimeAndBody(@ExchangeProperty(value = Exchange.CREATED_TIMESTAMP) Date startDate, @ExchangeProperty(value= Exchange.EXCEPTION_CAUGHT) Exception exception, @Body Object body) {
+    public void logElapsedTimeAndBody(@ExchangeProperty(value = Exchange.CREATED_TIMESTAMP) Date startDate, @ExchangeProperty(value= Exchange.EXCEPTION_CAUGHT) Exception exception, @Body Object body, @Header(value=Exchange.BREADCRUMB_ID) String breadcrumbId) {
         
         Date logDate = new Date();
         
@@ -40,7 +42,8 @@ public class EventLogger {
                 kv("startDate",startDate),
                 kv("logDate",logDate),
                 kv("elapsed", logDate.getTime() - startDate.getTime()),
-                kv("body",body)
+                kv("body",body),
+                kv("camel.breadcrumbId",breadcrumbId)
                 );
             }
         else
@@ -50,7 +53,8 @@ public class EventLogger {
                 kv("startDate",startDate),
                 kv("logDate",logDate),
                 kv("elapsed", logDate.getTime() - startDate.getTime()),
-                kv("body",body)
+                kv("body",body),
+                kv("camel.breadcrumbId",breadcrumbId)
                 );
             }
 

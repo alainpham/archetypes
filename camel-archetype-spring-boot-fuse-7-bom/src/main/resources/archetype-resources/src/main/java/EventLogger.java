@@ -53,7 +53,7 @@ public class EventLogger {
                 kv("startDate",startDate),
                 kv("logDate",logDate),
                 kv("elapsed", logDate.getTime() - startDate.getTime()),
-                kv("body",body),
+                kv("body",null),
                 kv("camel.breadcrumbId",breadcrumbId)
                 );
             }

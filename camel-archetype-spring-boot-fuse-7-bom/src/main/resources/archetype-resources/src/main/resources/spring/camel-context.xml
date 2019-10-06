@@ -10,7 +10,7 @@
        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
        ">
 
-    <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring" useMDCLogging="true">
+    <camelContext id="${artifactId}" xmlns="http://camel.apache.org/schema/spring">
 
 		<rest id="restsvc"  path="/restsvc">
 			<get id="get-ping" uri="/ping">

@@ -29,7 +29,8 @@ public class RestConfigurator extends RouteBuilder {
 		.host(getContext().resolvePropertyPlaceholders("{{sys:camelrest.host:localhost}}"))
         .dataFormatProperty("prettyPrint", "true")
         .apiProperty("api.title", "${artifactId}")
-        .apiProperty("api.version", "${version}");
+        .apiProperty("api.version", "${version}")
+        .apiProperty("cors", "true");
 		
         InputStream is = getClass().getResourceAsStream("/camel-rest.xml");
         if (is != null) {

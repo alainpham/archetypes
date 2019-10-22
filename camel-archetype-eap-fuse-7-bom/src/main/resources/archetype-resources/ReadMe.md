@@ -12,7 +12,7 @@ mvn clean package wildfly:deploy
 
 Acces to swagger def
 
-http://localhost:8080/${artifactId}/webjars/swagger-ui/2.1.0/index.html?url=/${artifactId}/camel/api-docs
+http://localhost:8080/${artifactId}/webjars/swagger-ui/3.23.5/index.html?url=/${artifactId}/camel/api-docs
 
 For testing
 

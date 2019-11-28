@@ -18,6 +18,7 @@
         <swagger.ui.version>3.23.5</swagger.ui.version>
         <swagger.codegen.version>2.4.8</swagger.codegen.version>
         <logstash.encoder.version>6.2</logstash.encoder.version>
+        <primefaces.version>7.0</primefaces.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jboss.home>PATH_TO_EAPHOME</jboss.home>
@@ -40,12 +41,33 @@
         <!-- Provided -->
         <dependency>
             <groupId>org.apache.camel</groupId>
+            <artifactId>camel-cdi</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
             <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.jms</groupId>
+            <artifactId>jboss-jms-api_2.0_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
         <!-- Test -->
@@ -103,6 +125,13 @@
         </dependency>
 #end
 
+        <!--Camel jms -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!--Circuit breaker-->
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -115,6 +144,22 @@
             <artifactId>camel-sql</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Import the JSF API, we use provided scope as the API is included in JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.faces</groupId>
+            <artifactId>jboss-jsf-api_2.3_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+#if (${pfSupport} == 'true')
+        <!-- PrimeFaces support -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+#end
     </dependencies>
     <!-- Build -->
     <build>

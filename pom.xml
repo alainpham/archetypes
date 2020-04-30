@@ -10,7 +10,8 @@
     <modules>
 		<module>camel-archetype-eap-fuse-7-bom</module>
 		<module>camel-archetype-karaf-fuse-7-bom</module>
-        <module>camel-archetype-spring-boot-fuse-7-bom</module>
+		<module>camel-archetype-spring-boot-fuse-7-bom</module>
+		<module>camel-archetype-spring-boot-2-fuse-7-bom</module>
         <module>camel-archetype-library-bom</module>
 	</modules>
 </project>

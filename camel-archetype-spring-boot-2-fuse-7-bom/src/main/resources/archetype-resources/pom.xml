@@ -9,13 +9,13 @@
     <name>${artifactId}</name>
     <description>${artifactId}</description>
     <properties>
-        <fuse.version>7.5.0.fuse-750029-redhat-00002</fuse.version>
-		<version.org.apache.camel>2.21.0.fuse-750033-redhat-00001</version.org.apache.camel>
+        <fuse.version>7.6.0.fuse-sb2-760028-redhat-00001</fuse.version>
+		<version.org.apache.camel>2.23.2.fuse-760030-redhat-0000</version.org.apache.camel>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <swagger.ui.version>3.24.3</swagger.ui.version>
-        <swagger.codegen.version>2.4.10</swagger.codegen.version>
-        <logstash.encoder.version>6.2</logstash.encoder.version>
-        <webjars.locator.version>0.38</webjars.locator.version>
+        <swagger.ui.version>3.25.1</swagger.ui.version>
+        <swagger.codegen.version>2.4.13</swagger.codegen.version>
+        <logstash.encoder.version>6.3</logstash.encoder.version>
+        <webjars.locator.version>0.40</webjars.locator.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -79,7 +79,7 @@
             <artifactId>swagger-ui</artifactId>
             <version>${swagger.ui.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
@@ -125,7 +125,7 @@
         <!--Circuit breaker-->
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-hystrix-starter</artifactId>
+            <artifactId>camel-hystrix</artifactId>
         </dependency>
 
         <!--For database access -->

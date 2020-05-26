@@ -12,12 +12,14 @@
         <fuse.version>7.6.0.fuse-sb2-760028-redhat-00001</fuse.version>
 		<version.org.apache.camel>2.23.2.fuse-760030-redhat-0000</version.org.apache.camel>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <swagger.ui.version>3.25.1</swagger.ui.version>
-        <swagger.codegen.version>2.4.13</swagger.codegen.version>
+        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <swagger.ui.version>3.25.4</swagger.ui.version>
+        <swagger.codegen.version>2.4.14</swagger.codegen.version>
         <logstash.encoder.version>6.3</logstash.encoder.version>
         <webjars.locator.version>0.40</webjars.locator.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <container.registry.url>image-registry.openshift-image-registry.svc:5000/ods-fuse/</container.registry.url>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -147,7 +149,7 @@
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
-        
+        <finalName>${project.artifactId}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -184,11 +186,11 @@
                     </profiles>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
     <profiles>
-
 
         <profile>
             <id>ocp</id>
@@ -200,12 +202,32 @@
                         <version>${fuse.version}</version>
                         <executions>
                             <execution>
+                                <phase>package</phase>
                                 <goals>
                                     <goal>resource</goal>
-                                    <goal>build</goal>
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/ocp.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}</finalName>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

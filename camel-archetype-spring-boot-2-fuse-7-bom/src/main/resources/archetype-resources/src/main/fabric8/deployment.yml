@@ -4,6 +4,8 @@ spec:
     spec:
       containers:
         - 
+          image: ${container.registry.url}${project.artifactId}:latest
+          imagePullPolicy: Always
           resources:
             requests:
               cpu: 0.2

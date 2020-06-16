@@ -20,7 +20,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- PUT THE PROJECT AND REGISTRY WHERE THE IMAGE WILL BE -->
-        <container.registry.url>image-registry.openshift-image-registry.svc:5000/ods-fuse/</container.registry.url>
+        <container.registry.url>image-registry.openshift-image-registry.svc:5000/fuse/</container.registry.url>
     </properties>
     <dependencyManagement>
         <dependencies>

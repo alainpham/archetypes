@@ -68,6 +68,12 @@
         <include>Dockerfile</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>DockerfileCommunity</include>
+      </includes>
+    </fileSet>
      <fileSet filtered="false" encoding="UTF-8">
          <directory></directory>
          <includes>

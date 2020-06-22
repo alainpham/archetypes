@@ -21,6 +21,20 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>${project.build.directory}</directory>
+      <outputDirectory>deploy</outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>${project.basedir}/src/main/fabric8-includes</directory>
+      <outputDirectory>deploy</outputDirectory>
+      <includes>    
+        <include>prometheus-config.yml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <directory>${project.build.directory}/classes/META-INF/fabric8</directory>
       <outputDirectory></outputDirectory>
       <includes>

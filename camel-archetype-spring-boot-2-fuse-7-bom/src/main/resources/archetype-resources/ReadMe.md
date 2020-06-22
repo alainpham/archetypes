@@ -41,8 +41,30 @@ curl http://localhost:8090/camel/restsvc/ping
 
 
 ```
+docker stop ${artifactId}
+docker rm ${artifactId}
+docker rmi ${artifactId}
 docker build -t ${artifactId} .
 docker run -d --net primenet --ip 172.18.0.10 --name ${artifactId} ${artifactId}
+```
+
+Stop or launch multple instaces
+
+```
+NB_CONTAINERS=2
+for (( i=0; i<$NB_CONTAINERS; i++ ))
+do
+   docker stop ${artifactId}-$i
+   docker rm ${artifactId}-$i
+done
+
+docker rmi ${artifactId}
+docker build -t ${artifactId} .
+
+for (( i=0; i<$NB_CONTAINERS; i++ ))
+do
+    docker run -d --net primenet --ip 172.18.0.1$i --name ${artifactId}-$i -e SPRING_PROFILES_ACTIVE=dev ${artifactId}
+done
 ```
 
 #[[## To release without deploying straight to an ocp cluster]]#
@@ -57,5 +79,5 @@ mvn  -P ocp package
 tar xzvf ${artifactId}-ocp.tar.gz
 cd ${artifactId}
 oc apply -f openshift.yml
-oc start-build ${artifactId} --from-file=${artifactId}.jar --follow
+oc start-build ${artifactId} --from-dir=deploy --follow
 ```

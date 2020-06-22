@@ -13,6 +13,6 @@ spec:
             limits:
               cpu: 2.0
               memory: 512Mi
-          # env:
-          # - name: AB_JMX_EXPORTER_CONFIG
-          #   value: "prometheus.yml"
+          env:
+          - name: AB_JMX_EXPORTER_CONFIG
+            value: "prometheus-config.yml"

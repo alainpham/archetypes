@@ -63,6 +63,20 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- xml  dependencies for java 11-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+          </dependency>
+
         <!-- autoreload on changes -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -206,6 +220,7 @@
                                 <phase>package</phase>
                                 <goals>
                                     <goal>resource</goal>
+                                    <goal>build</goal>
                                 </goals>
                             </execution>
                         </executions>

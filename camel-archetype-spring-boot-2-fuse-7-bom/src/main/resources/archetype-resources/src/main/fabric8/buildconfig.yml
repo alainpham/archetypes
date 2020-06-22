@@ -2,7 +2,7 @@
 kind: BuildConfig
 apiVersion: v1
 metadata:
-  name: "${project.artifactId}"
+  name: "${project.artifactId}-s2i"
   creationTimestamp: 
   labels:
     component: "${project.artifactId}"

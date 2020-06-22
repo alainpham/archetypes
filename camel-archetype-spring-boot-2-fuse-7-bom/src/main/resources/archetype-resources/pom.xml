@@ -20,8 +20,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- PUT THE PROJECT AND REGISTRY WHERE THE IMAGE WILL BE -->
-        <container.registry.url>image-registry.openshift-image-registry.svc:5000/fuse/</container.registry.url>
-    </properties>
+        <fabric8.namespace>fuse</fabric8.namespace>
+        <container.registry.url>image-registry.openshift-image-registry.svc:5000</container.registry.url>
+     </properties>
     <dependencyManagement>
         <dependencies>
         <dependency>
@@ -220,7 +221,6 @@
                                 <phase>package</phase>
                                 <goals>
                                     <goal>resource</goal>
-                                    <goal>build</goal>
                                 </goals>
                             </execution>
                         </executions>

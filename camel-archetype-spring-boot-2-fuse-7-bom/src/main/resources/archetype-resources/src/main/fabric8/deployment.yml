@@ -4,7 +4,7 @@ spec:
     spec:
       containers:
         - 
-          image: ${container.registry.url}${project.artifactId}:latest
+          image: ${container.registry.url}/${fabric8.namespace}/${project.artifactId}:latest
           imagePullPolicy: Always
           resources:
             requests:

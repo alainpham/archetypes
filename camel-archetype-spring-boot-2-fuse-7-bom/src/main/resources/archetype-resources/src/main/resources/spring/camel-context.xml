@@ -25,10 +25,10 @@
         <route id="http-receiver">
             <from id="http-receiver-starter" uri="servlet://ping" />
             <to uri="bean:eventLogger?method=logStartAndBody" />
-            <setHeader headerName="Content-Type">
+            <setHeader id="set-header-http-receiver" headerName="Content-Type">
                 <constant>application/json</constant>
             </setHeader>
-            <setBody>
+            <setBody  id="set-body-http-receiver">
                 <constant>{"msg" : "HELLO"}</constant>
             </setBody>
             <to uri="bean:eventLogger?method=logElapsedTimeAndBody" />

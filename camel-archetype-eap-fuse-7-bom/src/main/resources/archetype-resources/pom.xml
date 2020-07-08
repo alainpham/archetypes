@@ -9,20 +9,18 @@
     <description>${artifactId}</description>
     <!-- Properties -->
     <properties>
-        <fuse.version>7.5.0.fuse-750029-redhat-00002</fuse.version>
-        <version.org.apache.camel>2.21.0.fuse-750033-redhat-00001</version.org.apache.camel>
+        <fuse.version>7.6.0.fuse-760027-redhat-00001</fuse.version>
+        <version.org.apache.camel>2.21.0.fuse-760027-redhat-00001</version.org.apache.camel>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
-        <wildfly-maven-plugin.version>2.0.1.Final</wildfly-maven-plugin.version>
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-        <swagger.ui.version>3.24.3</swagger.ui.version>
-        <swagger.codegen.version>2.4.10</swagger.codegen.version>
-        <logstash.encoder.version>6.2</logstash.encoder.version>
-        <primefaces.version>7.0</primefaces.version>
+        <maven-war-plugin.version>3.3.0</maven-war-plugin.version>
+        <wildfly-maven-plugin.version>2.0.2.Final</wildfly-maven-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <swagger.ui.version>3.28.0</swagger.ui.version>
+        <swagger.codegen.version>2.4.14</swagger.codegen.version>
+        <logstash.encoder.version>6.4</logstash.encoder.version>
+        <primefaces.version>8.0</primefaces.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jboss.home>PATH_TO_EAPHOME</jboss.home>
-        <server.config>standalone.xml</server.config>
     </properties>
     <!-- DependencyManagement -->
     <dependencyManagement>
@@ -92,6 +90,7 @@
             <artifactId>swagger-ui</artifactId>
             <version>${swagger.ui.version}</version>
         </dependency>
+
         <!-- parsing rendering support -->
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -190,8 +189,10 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${wildfly-maven-plugin.version}</version>
                 <configuration>
-                    <jbossHome>${jboss.home}</jbossHome>
-                    <serverConfig>${server.config}</serverConfig>
+                    <hostname>eap</hostname>
+                    <port>9990</port>
+                    <username>admin</username>
+                    <password>admin</password>
                 </configuration>
             </plugin>
         </plugins>

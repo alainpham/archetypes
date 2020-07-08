@@ -13,9 +13,9 @@
 		<version.org.apache.camel>2.23.2.fuse-760030-redhat-0000</version.org.apache.camel>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-        <swagger.ui.version>3.25.4</swagger.ui.version>
+        <swagger.ui.version>3.28.0</swagger.ui.version>
         <swagger.codegen.version>2.4.14</swagger.codegen.version>
-        <logstash.encoder.version>6.3</logstash.encoder.version>
+        <logstash.encoder.version>6.4</logstash.encoder.version>
         <webjars.locator.version>0.40</webjars.locator.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

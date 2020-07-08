@@ -35,11 +35,11 @@
 			<setBody>
 				<simple>{"msg" : "HELLO"}</simple>
 			</setBody>
-			<inOnly uri="jms:queue:app.test"/>
+			<inOnly uri="jms:queue:app.queue"/>
 		</route>
 
 		<route>
-			<from uri="jms:queue:app.test"/>
+			<from uri="jms:queue:app.queue"/>
 			<transacted/>
 			<log message="${headers}"/>
 		</route>

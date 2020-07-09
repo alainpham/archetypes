@@ -31,8 +31,8 @@ public class Application{
     @Resource(mappedName = "java:/JmsConnectionFactory")
     private ConnectionFactory connectionFactory;
 
-    @Resource 
-    private UserTransaction userTransaction;
+    // @Resource 
+    // private UserTransaction userTransaction;
 
     //change this to be able to use database connections
     @Resource(mappedName = "java:jboss/datasources/postgresqlds") 
@@ -48,19 +48,21 @@ public class Application{
 
     @Produces
     @Named("jms")
-    public JmsComponent createJmsComponent(PlatformTransactionManager transactionManager) {
-        return JmsComponent.jmsComponentTransacted(connectionFactory, transactionManager);
+    public JmsComponent createJmsComponent() {
+        // return JmsComponent.jmsComponent(connectionFactory);
+        return JmsComponent.jmsComponentTransacted(connectionFactory);
     }
 
-    @Produces
-    @Named("transactionManager")
-    public PlatformTransactionManager createTransactionManager() {
-        JtaTransactionManager jtaTransactionManager = new JtaTransactionManager();
-        jtaTransactionManager.setUserTransaction(userTransaction);
-        jtaTransactionManager.setTransactionManager(transactionManager);
-        jtaTransactionManager.afterPropertiesSet();
-        return jtaTransactionManager;
-    }
+    // @Produces
+    // @Named("transactionManager")
+    // public PlatformTransactionManager createTransactionManager() {
+    //     JtaTransactionManager jtaTransactionManager = new JtaTransactionManager();
+    //     jtaTransactionManager.setUserTransaction(userTransaction);
+    //     jtaTransactionManager.setTransactionManager(transactionManager);
+    //     jtaTransactionManager.afterPropertiesSet();
+    //     return jtaTransactionManager;
+    // }
+
 
 
 }

@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 @ApplicationScoped
 @ContextName("${artifactId}")
-public class RestConfigurator extends RouteBuilder {
+public class CamelConfigurator extends CdiRouteBuilder {
 
 	final Logger logger = LoggerFactory.getLogger(RestConfigurator.class);
 
@@ -31,7 +31,7 @@ public class RestConfigurator extends RouteBuilder {
 
 		restConfiguration()
 		.component("servlet")
-		.bindingMode(RestBindingMode.auto)
+		.bindingMode(RestBindingMode.json)
 		.contextPath("/${artifactId}/camel")
 		.port(getContext().resolvePropertyPlaceholders("{{sys:jboss.http.port:8080}}"))
 		.apiContextPath("/api-docs")

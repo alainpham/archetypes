@@ -40,7 +40,7 @@ public class CamelConfigurator extends CdiRouteBuilder {
         .apiProperty("api.version", "${version}")
         .apiProperty("cors", "true");
 		
-        InputStream is = getClass().getResourceAsStream("/camel-rest.xml");
+        InputStream is = getClass().getResourceAsStream("/camel-rest/rests.xml");
         if (is != null) {
             RestsDefinition r = getContext().loadRestsDefinition(is);
             getContext().addRestDefinitions(r.getRests());

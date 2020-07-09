@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.jta.JtaTransactionManager;
 
 @Named("${artifactId}App")
-@ImportResource("camel-context.xml")
+@ImportResource("camel/routes.xml")
 public class Application{
 
     @Inject

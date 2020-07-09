@@ -20,7 +20,7 @@ Fuse 7 on Spring Boot 2 for Openshift archetype.
 Includes prometheus jmx exporter config for performance monitoring.
 See this [repo](https://github.com/alainpham/app-archetypes) for more details on how to setup monitoring with Prometheus and Grafana.
 
-Demo video of monitoring (here http://www.youtube.com/watch?v=0LDgv1nIk-Y
+Demo video of monitoring here http://www.youtube.com/watch?v=0LDgv1nIk-Y
 
 To create a project :
 

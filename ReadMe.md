@@ -11,3 +11,7 @@ Fuse 7 on Spring Boot Openshift
 ## camel-archetype-eap-fuse-7-bom
 
 Fuse 7 archetype for EAP / Wildfly
+
+```
+mvn deploy -DaltDeploymentRepository=nexus::default::http://nexus:8081/repository/maven-releases
+```

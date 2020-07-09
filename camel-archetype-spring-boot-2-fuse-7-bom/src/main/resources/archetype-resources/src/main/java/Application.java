@@ -12,7 +12,7 @@ import org.apache.camel.component.hystrix.metrics.servlet.HystrixEventStreamServ
 
 
 @SpringBootApplication
-@ImportResource({"classpath:spring/camel-context.xml"})
+// @ImportResource({"classpath:spring/camel-context.xml"})
 public class Application {
 
 #if (${cxfSupport} == 'true')

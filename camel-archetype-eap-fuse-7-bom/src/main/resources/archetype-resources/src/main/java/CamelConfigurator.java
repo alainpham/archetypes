@@ -5,8 +5,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
-
-import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.cdi.CdiRouteBuilder;
 import org.apache.camel.cdi.ContextName;
 import org.apache.camel.component.servlet.ServletComponent;
 import org.apache.camel.model.RouteDefinition;

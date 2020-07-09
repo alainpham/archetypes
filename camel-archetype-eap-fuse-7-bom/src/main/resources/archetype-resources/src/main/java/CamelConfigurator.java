@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 @ContextName("${artifactId}")
 public class CamelConfigurator extends CdiRouteBuilder {
 
-	final Logger logger = LoggerFactory.getLogger(RestConfigurator.class);
+	final Logger logger = LoggerFactory.getLogger(CamelConfigurator.class);
 
 
 	@Override

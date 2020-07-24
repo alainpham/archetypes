@@ -79,5 +79,5 @@ mvn  -P ocp package
 tar xzvf ${artifactId}-ocp.tar.gz
 cd ${artifactId}
 oc apply -f openshift.yml
-oc start-build ${artifactId} --from-dir=deploy --follow
+oc start-build ${artifactId}-s2i --from-dir=deploy --follow
 ```

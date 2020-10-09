@@ -9,15 +9,15 @@
     <name>${artifactId}</name>
     <description>${artifactId}</description>
     <properties>
-        <fuse.version>7.6.0.fuse-sb2-760028-redhat-00001</fuse.version>
-		<version.org.apache.camel>2.23.2.fuse-760030-redhat-0000</version.org.apache.camel>
+        <fuse.version>7.7.0.fuse-sb2-770010-redhat-00001</fuse.version>
+		<version.org.apache.camel>2.23.2.fuse-sb2-770010-redhat-00001</version.org.apache.camel>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-        <swagger.ui.version>3.28.0</swagger.ui.version>
-        <swagger.codegen.version>2.4.14</swagger.codegen.version>
+        <swagger.ui.version>3.35.0</swagger.ui.version>
+        <swagger.codegen.version>2.4.16</swagger.codegen.version>
         <logstash.encoder.version>6.4</logstash.encoder.version>
         <webjars.locator.version>0.40</webjars.locator.version>
-        <jmx.prometheus.javaagent.version>0.13.0</jmx.prometheus.javaagent.version>
+        <jmx.prometheus.javaagent.version>0.14.0</jmx.prometheus.javaagent.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- PUT THE PROJECT AND REGISTRY WHERE THE IMAGE WILL BE -->

@@ -21,7 +21,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: "openshift"
-        name: fuse7-java-openshift:1.6
+        name: fuse7-java-openshift:1.7
       forcePull: true
       incremental: true
       env:

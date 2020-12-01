@@ -1,5 +1,6 @@
 #[[# Spring Boot with camel and other useful things]]# ${artifactId} 
 
+
 #[[## To build this project use]]#
 
 ```
@@ -14,8 +15,17 @@ mvn spring-boot:run
 
 #[[## To deploy directly on openshift]]#
 
+make sure you have the image streams deployed
+
 ```
-mvn -P ocp fabric8:deploy
+BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
+
+oc create -n openshift -f ${BASEURL}/fis-image-streams.json
+oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
+```
+
+```
+mvn -P ocp fabric8:deploy fabric8:build
 ```
 
 #[[## For testing]]#

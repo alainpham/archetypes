@@ -12,7 +12,6 @@ import org.apache.camel.component.hystrix.metrics.servlet.HystrixEventStreamServ
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
-i
 
 @SpringBootApplication
 @EnableWebSocket

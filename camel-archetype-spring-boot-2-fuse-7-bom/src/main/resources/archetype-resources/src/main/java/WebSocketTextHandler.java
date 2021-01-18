@@ -13,7 +13,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 public class WebSocketTextHandler extends TextWebSocketHandler {
 	
 	private Set<WebSocketSession> sessions = Collections.synchronizedSet(new HashSet<WebSocketSession>());
-    public static final Logger logger = LoggerFactory.getLogger(WebSocketTextHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(WebSocketTextHandler.class);
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -24,7 +24,7 @@ public class WebSocketTextHandler extends TextWebSocketHandler {
 	@Override
 	public void handleTextMessage(WebSocketSession session, TextMessage message)
 			throws Exception {
-		logger.info(message);
+		logger.info(message.getPayload());
 		
 		for(WebSocketSession s : sessions) {
 			try {

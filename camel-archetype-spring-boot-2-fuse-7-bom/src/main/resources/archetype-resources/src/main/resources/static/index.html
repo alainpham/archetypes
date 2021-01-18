@@ -1,14 +1,60 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<!doctype html>
+<html lang="en">
+<header>
+    <meta charset="utf-8">
     <title>${artifactId}</title>
-</head>
+    <meta name="description" content="${artifactId} interface">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/framework/bootstrap.min.css">
+    <link rel="stylesheet" href="css/framework/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css" />
+    
+</header>
 
 <body>
-   <h1>Welcome to the ${artifactId} interface</h1>
-   <p><a href="camel/ping">Ping</a></p>
-   <p><a href="camel/api-docs">Swagger Definition</a></p>
-   <p><a href="/webjars/swagger-ui/index.html?url=/camel/api-docs">Swagger UI</a></p>
+
+    <div w3-include-html="partials/header.html"></div>
+
+    <!-- PUT YOUR CONTENT HERE -->
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron">
+                    <h1 class="display-4">Welcome to the ${artifactId} interface</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" id="message-input" value="Test message">
+                <button id="send-button" onclick="backEndRequest(null,'/camel/send-msg','post', document.getElementById('message-input').value)">send</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="content"></p>
+            </div>
+            <div class="col">
+                <p id="messages"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- END PUT YOUR CONTENT HERE -->
+
+
+    <script src="js/framework/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/framework/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        includeHTML();
+    </script>
+
 </body>
 
 </html>

@@ -20,4 +20,12 @@
         </transform>
         <log id="log-body" message=">>> ${body}"/>
     </route>
+
+    <route id="send-socket-msg-to-all">
+        <from id="send-socket-msg-to-all-starter" uri="servlet://send-msg"/>
+        <convertBodyTo type="java.lang.String"/>
+        <log message="${body}"/>
+        <to uri="ahc-ws:{{server.address}}:{{server.port}}/websocket"/>
+    </route>
+
 </routes>

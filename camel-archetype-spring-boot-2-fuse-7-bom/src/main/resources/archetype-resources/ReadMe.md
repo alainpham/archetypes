@@ -18,7 +18,7 @@ mvn spring-boot:run
 make sure you have the image streams deployed
 
 ```
-BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
+BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-sb2-780019-redhat-00005
 
 oc create -n openshift -f ${BASEURL}/fis-image-streams.json
 oc replace -n openshift -f ${BASEURL}/fis-image-streams.json

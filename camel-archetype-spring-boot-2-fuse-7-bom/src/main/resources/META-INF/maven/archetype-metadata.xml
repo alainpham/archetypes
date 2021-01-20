@@ -69,6 +69,9 @@
     <requiredProperty key="svc-camel-definition-path">
       <defaultValue>/camel/api-docs</defaultValue>
     </requiredProperty>
+    <requiredProperty key="svc-send-msg-path">
+      <defaultValue>/camel/send-msg</defaultValue>
+    </requiredProperty>
     <requiredProperty key="swagger-ui-path">
       <defaultValue>/webjars/swagger-ui/index.html?url=/camel/api-docs</defaultValue>
     </requiredProperty>

@@ -20,8 +20,8 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        namespace: "openshift"
-        name: fuse7-java-openshift:1.8
+        namespace: "${from-image-stream-tag-ns}"
+        name: ${from-image-stream-tag}
       forcePull: true
       incremental: true
       env:

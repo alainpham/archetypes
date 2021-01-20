@@ -6,6 +6,72 @@
     <requiredProperty key="cxfSupport" >
       <defaultValue>false</defaultValue>
     </requiredProperty>
+    
+    <requiredProperty key="fuse-version">
+      <defaultValue>7.8.0.fuse-sb2-780038-redhat-00001</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="camel-version">
+      <defaultValue>2.23.2.fuse-sb2-780036-redhat-00001</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="swagger-ui-version">
+      <defaultValue>3.40.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="swagger-codegen-version">
+      <defaultValue>2.4.18</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="fmp-version">
+      <defaultValue>4.4.1</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="cxf-codegen-plugin-version">
+      <defaultValue>3.3.6</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="logstash-encoder-version">
+      <defaultValue>6.6</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="webjars-locator-version">
+      <defaultValue>0.40</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="jmx-prometheus-javaagent-version">
+      <defaultValue>0.14.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="project-reporting-outputEncoding">
+      <defaultValue>UTF-8</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="project-build-sourceEncoding">
+      <defaultValue>UTF-8</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="maven-assembly-plugin-version">
+      <defaultValue>3.3.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="maven-compiler-plugin-version">
+      <defaultValue>3.8.1</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="maven-compiler-target">
+      <defaultValue>1.8</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="maven-compiler-source">
+      <defaultValue>1.8</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="from-image-stream-tag-ns">
+      <defaultValue>openshift</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="from-image-stream-tag">
+      <defaultValue>fuse7-java-openshift:1.8</defaultValue>
+    </requiredProperty>
+    
+    <!-- app vars -->
+    <requiredProperty key="svc-ping-path">
+      <defaultValue>/camel/ping</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="svc-definition-path">
+      <defaultValue>/camel/api-docs</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="svc-camel-definition-path">
+      <defaultValue>/camel/api-docs</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="swagger-ui-path">
+      <defaultValue>/webjars/swagger-ui/index.html?url=/camel/api-docs</defaultValue>
+    </requiredProperty>
   </requiredProperties>
  <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">

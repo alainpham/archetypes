@@ -68,7 +68,13 @@ function connectSocket(){
 
 function processSocketMsg(event) {
     text = event.data;
-    jsonMsg = JSON.parse(text);
+    var jsonMsg;
+    try {
+        jsonMsg = JSON.parse(text);
+    } catch(e) {
+        console.log("considered using text message..");
+        jsonMsg = text;
+    }
 
     if (jsonMsg.actions.includes("preview")){
         logMessage(JSON.stringify(jsonMsg,undefined,2));

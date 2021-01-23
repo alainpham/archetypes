@@ -10,6 +10,9 @@
     <requiredProperty key="fuse-version">
       <defaultValue>7.8.0.fuse-sb2-780038-redhat-00001</defaultValue>
     </requiredProperty>
+    <requiredProperty key="fuse-app-template-version">
+      <defaultValue>2.1.0.fuse-sb2-780019-redhat-00005</defaultValue>
+    </requiredProperty>
     <requiredProperty key="camel-version">
       <defaultValue>2.23.2.fuse-sb2-780036-redhat-00001</defaultValue>
     </requiredProperty>

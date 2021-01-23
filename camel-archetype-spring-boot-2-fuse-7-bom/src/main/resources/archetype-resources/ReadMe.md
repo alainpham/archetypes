@@ -13,6 +13,49 @@ mvn install
 mvn spring-boot:run
 ```
 
+#[## Dealing with SSL/TLS]]#
+
+Generate some private keys and truststores
+
+```
+keytool -genkey \
+    -alias ${artifactId}  \
+    -storepass password \
+    -keyalg RSA \
+    -storetype PKCS12 \
+    -dname "cn=${artifactId}" \
+    -validity 365000 \
+    -keystore tls/keystore.p12
+
+keytool -export \
+    -alias ${artifactId} \
+    -rfc \
+    -storepass password \
+    -keystore tls/broker-keystore.p12 \
+    -file tls/${artifactId}.pem
+
+FILES=tls/trusted-certs/*
+for f in $FILES
+do
+    full="${f##*/}"
+    extension="${full##*.}"
+    filename="${full%.*}"
+    echo "importing $full in alias $filename"
+
+    keytool -import \
+        -alias $filename \
+        -storepass password\
+        -storetype PKCS12 \
+        -noprompt \
+        -keystore tls/truststore.p12 \
+        -file $f
+done
+
+keytool -list -storepass password -keystore tls/keystore.p12 -v
+keytool -list -storepass password -keystore tls/truststore.p12 -v
+```
+
+
 #[[## To deploy directly on openshift]]#
 
 make sure you have the image streams deployed
@@ -25,6 +68,13 @@ oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
 ```
 
 ```
+oc create secret generic ${artifactId}-tls-secret \
+--from-file=keystore.p12=tls/keystore.p12 \
+--from-file=truststore.p12=tls/truststore.p12
+
+oc create secret generic ${artifactId}-prop-secret \
+--from-file=application.properties=src/main/resources/application.properties
+
 mvn -P ocp fabric8:deploy fabric8:build
 ```
 

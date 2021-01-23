@@ -13,7 +13,7 @@ mvn install
 mvn spring-boot:run
 ```
 
-#[## Dealing with SSL/TLS]]#
+#[[## Dealing with SSL/TLS]]#
 
 Generate some private keys and truststores
 

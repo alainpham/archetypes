@@ -73,7 +73,10 @@ function processSocketMsg(event) {
         jsonMsg = JSON.parse(text);
     } catch(e) {
         console.log("considered using text message..");
-        jsonMsg = text;
+        jsonMsg = {
+            actions: "preview",
+            data: text
+        }
     }
 
     if (jsonMsg.actions.includes("preview")){

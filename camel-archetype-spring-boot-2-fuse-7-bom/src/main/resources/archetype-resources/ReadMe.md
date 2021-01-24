@@ -13,7 +13,7 @@ mvn install
 mvn spring-boot:run
 ```
 
-#[[## Dealing with SSL/TLS]]#
+#[[##Dealing with SSL/TLS]]#
 
 Generate some private keys and truststores
 
@@ -37,9 +37,9 @@ keytool -export \
 FILES=tls/trusted-certs/*
 for f in $FILES
 do
-    full="${f##*/}"
-    extension="${full##*.}"
-    filename="${full%.*}"
+#[[    full="${f##*/}"]]#
+#[[    extension="${full##*.}"]]#
+#[[    filename="${full%.*}"]]#
     echo "importing $full in alias $filename"
 
     keytool -import \
@@ -105,7 +105,7 @@ docker stop ${artifactId}
 docker rm ${artifactId}
 docker rmi ${artifactId}
 docker build -t ${artifactId} .
-docker run -d --net primenet --ip 172.18.0.10 --name ${artifactId} ${artifactId}
+docker run -d --net primenet --ip 172.18.0.10 --name ${artifactId} -e SPRING_PROFILES_ACTIVE=dev ${artifactId}
 ```
 
 Stop or launch multple instaces

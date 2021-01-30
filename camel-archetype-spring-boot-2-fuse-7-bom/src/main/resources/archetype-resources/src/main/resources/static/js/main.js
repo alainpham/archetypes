@@ -29,18 +29,29 @@ function includeHTML() {
 
 function backEndRequest(elementId,path,meth,msg){
     console.log(window.location.protocol + "//" + window.location.host + path);
-    console.log("sending" + msg);
+    console.log("http request : "  + msg);
     fetch(window.location.protocol + "//" + window.location.host + path, {
         method: meth,
         body: msg
       })
         .then(response => response.text())
         .then(function (response) {
-            console.log(response);
+            console.log("http response :" + response);
             if(elementId!=null){
                 document.getElementById(elementId).innerHTML =  response;
             }
         })
+}
+
+
+function formDataToJson(formId){
+    var jsonData={};
+    var form = document.getElementById(formId)
+    for (var i = 0; i < form.elements.length; i++) {
+            var e = form.elements[i];
+            jsonData[e.id] = e.value;
+    }
+    return jsonData;
 }
 
 function toggleResponsiveMenu(){

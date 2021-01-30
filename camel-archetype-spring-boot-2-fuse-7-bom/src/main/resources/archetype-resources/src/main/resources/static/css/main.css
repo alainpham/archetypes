@@ -206,7 +206,6 @@ button {
 
 button:active,button:target {
 	color: var(--tmpl-back-color);
-	transform: translateY(0.5em);
 	background-color: var(--tmpl-main-color-light);
 }
 
@@ -219,7 +218,7 @@ button:active,button:target {
 
 	button:active,button:target {
 		color: var(--tmpl-back-color);
-		transform: scale(1.05) translateY(0.5em);
+		transform: scale(1.05);
 		background-color: var(--tmpl-main-color-light);
 	}
 

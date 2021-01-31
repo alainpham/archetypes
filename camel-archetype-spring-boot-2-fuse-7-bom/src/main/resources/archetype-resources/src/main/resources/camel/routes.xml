@@ -21,11 +21,20 @@
         <log id="log-body" message=">>> ${body}"/>
     </route>
 
-    <route id="send-socket-msg-to-all">
-        <from id="send-socket-msg-to-all-starter" uri="servlet://send-msg"/>
+    <route id="send-msg">
+        <from id="send-socket-msg-to-all-starter" uri="servlet:/send-msg"/>
         <convertBodyTo type="java.lang.String"/>
+        <unmarshal>
+            <json library="Jackson"/>
+        </unmarshal>
         <log message="${body}"/>
-        <to uri="ahc-ws:{{server.address}}:{{server.port}}/websocket"/>
+
+        <bean ref="viewUpdate" method="upsertData(${body}, person, state-table)"/>
+        <bean ref="viewUpdate" method="appendData(${body}, person, log-table)"/>
+
+        <marshal>
+            <json library="Jackson"/>
+        </marshal>
     </route>
 
 </routes>

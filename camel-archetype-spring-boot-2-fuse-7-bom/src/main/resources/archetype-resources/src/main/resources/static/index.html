@@ -20,22 +20,43 @@
             <h1>Welcome to the ${artifactId} interface</h1>
         </div>
         <div class="flex-container">
-            <div class="flex-item" >
+            <div class="flex-item " >
                 <form id="data-form" class="flex-container-col">
-                    <input  type="text" id="message-input" value="" placeholder="Your message">
+                    <label>Id</label>
+                    <input  type="text" id="id" value="xx" placeholder="Id">
+                    <label>Name</label>
+                    <input  type="text" id="name" value="John" placeholder="Your name">
+                    <label>First Name</label>
+                    <input  type="text" id="firstName" value="Doe" placeholder="Your first name">
+                    <label>Your vote</label>
+                    <select id="vote">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <label>Message content</label>
                     <textarea  id="text-area"></textarea>
                 </form>
                 <button  id="send-button"
-                    onclick="backEndRequest('messages','${svc-send-msg-path}','post', document.getElementById('message-input').value)">send</button>
+                    onclick="backEndRequest(null,'${svc-send-msg-path}','post', formDataToJson('data-form'))">send</button>
             </div>
             <div class="flex-item flex-grow">
-                <h2>Log Messages</h2>
+                <h2>State Table</h2>
+                <div class="flex-container">
+                    <button onclick="clearTable('state-table')">clear</button>
+                    <button onclick="processSocketMsg(exampleStateEvent)">populate state example</button>
+                </div>
+                <table id="state-table"></table>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item flex-grow">
+                <h2>Last message</h2>
                 <pre id="messages">Basic Messages Will show here</pre>
             </div>
         </div>
         <div class="flex-container">
             <div class="flex-item flex-grow flex-container-col">
-                <h2>Data Table</h2>
+                <h2>Log messages</h2>
                 <div class="flex-container">
                     <button onclick="clearTable('log-table')">clear</button>
                     <button onclick="processSocketMsg(exampleEvent)">populate example</button>

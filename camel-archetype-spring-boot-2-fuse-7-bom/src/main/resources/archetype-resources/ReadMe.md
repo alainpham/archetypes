@@ -141,3 +141,11 @@ cd ${artifactId}
 oc apply -f openshift.yml
 oc start-build ${artifactId}-s2i --from-dir=deploy --follow
 ```
+
+#[[## Push on dockerhub]]#
+
+```
+docker login
+docker build -t ${artifactId} -f DockerfileCommunity .
+docker tag ${artifactId}:latest YOUR_REPO/${artifactId}:latest
+```

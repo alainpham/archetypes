@@ -347,8 +347,8 @@
                                     <sourceRoot>${basedir}/src/main/java</sourceRoot>
                                     <wsdlOptions>
                                         <wsdlOption>
-                                            <wsdl>${basedir}/src/main/resources/wsdl/contract.wsdl</wsdl>
-                                            <wsdlLocation>classpath:wsdl/contract.wsdl</wsdlLocation>
+                                            <wsdl>${basedir}/src/main/resources/api-definitions/contract.wsdl</wsdl>
+                                            <wsdlLocation>classpath:api-definitions/contract.wsdl</wsdlLocation>
                                             <bareMethods></bareMethods>
                                         </wsdlOption>
                                     </wsdlOptions>

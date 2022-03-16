@@ -21,7 +21,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: "${from-image-stream-tag-ns}"
-        name: ${from-image-stream-tag}
+        name: ${from-image-stream-tag}:${from-image-stream-tag-version}
       forcePull: true
       incremental: true
       env:

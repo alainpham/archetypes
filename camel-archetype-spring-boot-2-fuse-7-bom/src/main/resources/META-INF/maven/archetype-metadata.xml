@@ -8,13 +8,13 @@
     </requiredProperty>
     
     <requiredProperty key="fuse-version">
-      <defaultValue>7.10.0.fuse-sb2-7_10_0-00014-redhat-00001</defaultValue>
+      <defaultValue>7.10.0.fuse-sb2-7_10_1-00008-redhat-00001</defaultValue>
     </requiredProperty>
     <requiredProperty key="fuse-app-template-version">
-      <defaultValue>2.1.0.fuse-sb2-7_10_0-00015-redhat-00001</defaultValue>
+      <defaultValue>2.1.0.fuse-sb2-7_10_1-00010-redhat-00001</defaultValue>
     </requiredProperty>
     <requiredProperty key="camel-version">
-      <defaultValue>2.23.2.fuse-7_10_0-00020-redhat-00001</defaultValue>
+      <defaultValue>2.23.2.fuse-7_10_1-00008-redhat-00001</defaultValue>
     </requiredProperty>
     <requiredProperty key="swagger-ui-version">
       <defaultValue>3.52.5</defaultValue>
@@ -60,7 +60,10 @@
       <defaultValue>openshift</defaultValue>
     </requiredProperty>
     <requiredProperty key="from-image-stream-tag">
-      <defaultValue>fuse7-java11-openshift:1.10</defaultValue>
+      <defaultValue>fuse7-java11-openshift</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="from-image-stream-tag-version">
+      <defaultValue>1.10</defaultValue>
     </requiredProperty>
     <requiredProperty key="jdk-version">
       <defaultValue>java-11-openjdk-headless</defaultValue>
